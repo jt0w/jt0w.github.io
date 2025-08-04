@@ -9,6 +9,10 @@ body {
     text-align: center;
     background-color: #02040f;
     color: #ffffff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 h1 {
