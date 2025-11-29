@@ -1,0 +1,9 @@
+.ccls-cache/
+.direnv/
+*.gen.c
+*.gen
+build
+index.gen.c
+index.gen
+index.html
+blogs_html/

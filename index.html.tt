@@ -1,3 +1,11 @@
+%
+#include "lib/util.h"
+Files blogs = {0};
+if (!list_dir("./blogs_html", &blogs)) {
+  fprintln(stderr, "error while searching for blogs");
+  exit(1);
+}
+%
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,10 +34,13 @@
         <h2 id="blog_posts">
             <a href="#blog_posts"># Posts</a>
         </h2>
-        <p><small>No posts yet</small></p>
-        <h2 id="projects">
-            <a href="#projects"># Projects</a>
-        </h2>
-        <p><small>Not documented yet<small></p>
+        %if (blogs.count == 0) {%
+            <p><small>No posts yet</small></p>
+        %}%
+        % for (size_t i = 0; i < blogs.count; ++i) {
+            char *s = strdup(blogs.items[i]);
+            s[strlen(s)-5] = '\0';%
+            <a href = "%printf("blogs_html/%%s", blogs.items[i]);%">%printf("%%s", s);%</a>
+        %}%
     </body>
 </html>
