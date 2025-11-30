@@ -25,5 +25,5 @@ build: build.c
 	gcc -o build build.c
 
 clean:
-	rm build index.gen.c index.gen index.html
+	rm -rf build index.gen.c index.gen index.html
 	rm -rf blogs_html
