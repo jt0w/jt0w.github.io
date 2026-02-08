@@ -23,6 +23,9 @@
             inputsFrom = [
               self'.packages.default
             ];
+            buildInputs = with pkgs;[
+            python3
+            ];
         };
         packages.default = pkgs.stdenv.mkDerivation {
           inherit version;
