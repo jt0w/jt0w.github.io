@@ -1,5 +1,4 @@
-%
-#include "lib/util.h"
+% #include "lib/util.h"
 Files blogs = {0};
 if (!list_dir("./blogs_html", &blogs)) {
   fprintln(stderr, "error while searching for blogs");
@@ -13,8 +12,8 @@ if (!list_dir("./blogs_html", &blogs)) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="darkreader-lock" />
         <title>jt0w</title>
-        <link href="reset.css" rel="stylesheet">
-        <link href="style.css" rel="stylesheet">
+        <link href="style/reset.css" rel="stylesheet">
+        <link href="style/style.css" rel="stylesheet">
     </head>
     <body>
         <h1 id>

@@ -7,7 +7,7 @@ all: $(HTML_FILES) index.html
 $(HTML_FILES): | blogs_html
 
 blogs_html/%.html: blogs/%.typ | blogs_html
-	typst compile --features html -f html $< $@
+	typst compile --root . --features html -f html $< $@
 
 blogs_html:
 	mkdir -p blogs_html
