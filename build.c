@@ -20,6 +20,7 @@ void parse_file(StringBuilder sb) {
       textBuf = (StringBuilder){0};                                            \
     }                                                                          \
   } while (0)
+
 #define flush_code_buf()                                                       \
   do {                                                                         \
     if (codeBuf.count > 0) {                                                   \
@@ -93,6 +94,7 @@ void parse_file(StringBuilder sb) {
   flush_text_buf();
   da_free(textBuf);
 }
+
 int main(int argc, char **argv) {
   rebuild_file(argv, argc);
   StringBuilder sb = {0};

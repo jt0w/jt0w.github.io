@@ -1,4 +1,5 @@
-% #include "lib/util.h"
+%
+#include "lib/util.h"
 Files blogs = {0};
 if (!list_dir("./blogs_html", &blogs)) {
   fprintln(stderr, "error while searching for blogs");
@@ -40,6 +41,7 @@ if (!list_dir("./blogs_html", &blogs)) {
             char *s = strdup(blogs.items[i]);
             s[strlen(s)-5] = '\0';%
             <a href = "%printf("blogs_html/%%s", blogs.items[i]);%">%printf("%%s", s);%</a>
+            <br/>
         %}%
     </body>
 </html>
